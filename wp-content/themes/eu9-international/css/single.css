@@ -1,0 +1,27 @@
+.single-outer-box {
+    padding: 60px 0;
+}
+.single-inner-row {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--primary-white);
+    border: 1px solid rgba(68,68,68,0.15);
+}
+.single-inner-row > * {
+    width: 100%;
+}
+.single-header {
+    background-color: rgba(68,68,68,0.06);
+    border-bottom: 1px solid rgba(68,68,68,0.15);
+}
+.single-body {
+    min-height: 250px;
+    padding: 30px 25px;
+}
+.single-body-inner {
+    display: flex;
+    flex-wrap: wrap;
+}

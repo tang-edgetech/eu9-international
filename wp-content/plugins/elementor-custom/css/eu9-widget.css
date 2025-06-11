@@ -3,3 +3,20 @@
     font-size: 14px;
     line-height: 18px;
 }
+.eu9-post-tag {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.eu9-post-tag > a {
+    background: #ffffff33;
+    color: #fff;
+    border: none;
+    padding: 8px 10px;
+    font-size: 14px;
+    line-height: 1;
+}
+.eu9-post-tag > a:hover {
+    background: #ffffff80;
+}
