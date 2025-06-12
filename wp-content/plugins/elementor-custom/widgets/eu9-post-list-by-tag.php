@@ -11,7 +11,7 @@ class EU9_Post_List_By_Tag_Widget extends Widget_Base {
     }
 
     public function get_title() {
-        return __( 'EU9 Post Tag', 'elementor-custom' );
+        return __( 'EU9 Post List - Filter by Tag', 'elementor-custom' );
     }
 
     public function get_icon() {

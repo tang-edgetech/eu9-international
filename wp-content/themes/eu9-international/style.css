@@ -65,6 +65,14 @@ html ,body {
 .btn, a, a.btn, button, button.btn {
 	transition: 0.3s ease;
 }
+img, .img-fluid {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.img-fluid {
+    max-width: 100%;
+}
 p {
 	margin-bottom: 0;
 }
@@ -73,6 +81,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 p, a, li, label, input, textarea, select {
 
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: var(--primary-black);
+    text-decoration: none;
+}
+.link, p > a:hover, li > a:hover, li p > a:hover {
+    text-decoration: underline;
 }
 .breadcrumb {
 	list-style: none;
@@ -91,6 +106,21 @@ p, a, li, label, input, textarea, select {
 	text-decoration: none;
 	font-size: 14px;
 	line-height: 24px;
+}
+.d-none {
+    display: none;
+}
+.d-block {
+    display: block;
+}
+.d-inline-block {
+    display: inline-block;
+}
+.d-flex {
+    display: flex;
+}
+.d-grid {
+    display: grid;
 }
 .col-1 {
 	flex: 0 0 auto;
@@ -139,4 +169,33 @@ p, a, li, label, input, textarea, select {
 .col-12 {
 	flex: 0 0 auto;
 	width: 100%;
+}
+.post-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.wp-editor * {
+    min-height: 24px;
+}
+blockquote {
+    background: #efefef;
+    padding: 20px;
+    margin-top: 15px;
+    padding-left: 50px;
+    border-left: 6px solid #3b3b3b;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: bold;
+}
+.post-meta, .meta-item {
+    display: flex;
+    flex-direction: row;
+}
+.post-meta {
+    gap: 20px;
+}
+.meta-item {
+    align-items: center;
+    gap: 8px;
 }
