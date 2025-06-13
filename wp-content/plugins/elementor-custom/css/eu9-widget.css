@@ -20,3 +20,13 @@
 .eu9-post-tag > a:hover {
     background: #ffffff80;
 }
+.eu9-datetime-picker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #aaaaaa;
+}
+.eu9-datetime-picker p {
+    font-size: 12px;
+    line-height: 1;
+}

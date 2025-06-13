@@ -1,0 +1,3 @@
+#masthead .custom-social-media .elementor-grid-item > a:not(:hover) {
+    background-color: transparent;
+}
