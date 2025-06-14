@@ -86,8 +86,20 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: var(--primary-black);
     text-decoration: none;
 }
+.input-control, input, input.input-control, textarea, textarea .input-control, select, select.input-control, label {
+    display: block;
+    width: 100%;
+}
+.input-control, .input-control:hover, .input-control:focus, .input-control:visited, input, input.input-control, input.input-control:hover, input.input-control:focus, input.input-control:visited, textarea, textarea.input-control, textarea.input-control:hover, textarea.input-control:focus, textarea.input-control:visited, select, select.input-control, select.input-control:hover, select.input-control:focus, select.input-control:visited {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
 .link, p > a:hover, li > a:hover, li p > a:hover {
     text-decoration: underline;
+}
+.input-control, .input-control:hover, .input-control:focus, .input-control:visited, input, input.input-control, input.input-control:hover, input.input-control:focus, input.input-control:visited, textarea, textarea.input-control, textarea.input-control:hover, textarea.input-control:focus, textarea.input-control:visited, select, select.input-control, select.input-control:hover, select.input-control:focus, select.input-control:visited {
+    text-decoration: none;
 }
 .breadcrumb {
 	list-style: none;

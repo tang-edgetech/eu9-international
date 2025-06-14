@@ -44,5 +44,11 @@ function eu9_register_widget_styles() {
         [],
         '1.0.'.time()
     );
+    wp_register_script(
+        'eu9-widget-script',
+        plugin_dir_url( __FILE__ ) . 'js/eu9-widget.js',
+        ('jQuery'),
+        '1.0.'.time()
+    );
 }
 add_action( 'wp_enqueue_scripts', 'eu9_register_widget_styles' );
