@@ -1,7 +1,10 @@
 <?php
 $home_url = home_url();
 $archive_title = get_the_archive_title();
-
+$term = get_queried_object();
+$category = $term->slug;
+$paged = max(1, get_query_var('paged'), get_query_var('page'));
+$ppp = 2;
 ?>
 <div class="post-outer-box">
     <div class="post-inner-row">
@@ -17,6 +20,32 @@ $archive_title = get_the_archive_title();
                 <div class="post-main col-xl-9 px-0">
                     <div class="post-content pe-md-4">
                         <h3 class="title-card"><span>Category</span></h3>
+                        <div class="post-grid post-listing-grid">
+                        <?php
+                        $args = array(
+                            'post_type' => 'post',
+                            'post_status' => 'publish',
+                            'order' => 'date',
+                            'orderby' => 'desc',
+                            'posts_per_page' => $ppp,
+                            'category_name'  => $category,
+                            'paged' => $paged,
+                        );
+                        $items = new WP_Query($args);
+                        if( $items->have_posts() ) {
+                            $index=0;
+                            while( $items->have_posts() ) {
+                                $items->the_post();
+                                get_template_part('template-parts/template-post-item', 'grid', array('post_id' => get_the_ID(), 'type' => 'listing', 'index'=>$index) );
+                                $index++;
+                            }
+                            wp_reset_postdata();
+                        }
+                        else {
+                            echo '<div class="dialog">There is no post found!</div>';
+                        }
+                        ?>
+                        </div>
                     </div>
                 </div>
                 <div class="post-sidebar col-xl-3 px-0 px-md-4 pe-md-0">

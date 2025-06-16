@@ -1,5 +1,64 @@
-@media (max-width: 767px) {}
+@media (max-width: 767px) {
+	.post-outer-box {
+		padding: 50px 0;
+	}
+	.post-outer-box, .post-body {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.post-grid {
+		gap: 30px;
+	}
+	.post-grid .post-item .post-thumbnail {
+		width: 100%;
+		aspect-ratio: 1.5;
+		height: 100%;
+	}
+	.post-grid .post-item .post-item-inner {
+		flex-direction: column;
+		gap: 20px;
+	}
+	.post-grid .post-item .post-entry-head {
+		margin-bottom: 20px;
+	}
+	.post-grid .post-item .post-title {
+		font-size: 24px;
+		line-height: 32px;
+	}
+	.post-grid .post-item  .post-category a, .post-grid .post-item .post-meta, .post-grid.post-layout-horizontal .post-item .post-title {
+		font-size: 12px;
+		line-height: 16px;
+	}
+	.post-grid.post-listing-grid .post-item .post-excerpt {
+    	-webkit-line-clamp: 4;
+	}
+	.post-grid.post-listing-grid .post-item:first-child .post-excerpt {
+    	-webkit-line-clamp: 5;
+	}
+	.post-grid.post-layout-horizontal .post-thumbnail {
+		width: 70px;
+		height: 50px;
+	}
+	.post-grid.post-layout-horizontal .post-item .post-item-inner {
+		flex-direction: row;
+	}
+}
 @media (min-width: 768px) {
+	.post-grid.post-listing-grid .post-item:first-child .post-thumbnail {
+		aspect-ratio: 1.727;
+		width: 100%;
+		height: 100%;
+	}
+	.post-grid.post-listing-grid .post-item:first-child .post-entry {
+		position: absolute;
+		max-width: 70%;
+		width: 100%;
+		padding: 35px 30px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: var(--primary-white);
+	}
     .d-md-none {
         display: none;
     }
@@ -112,9 +171,21 @@
 	#mobile-menu-navigation {
 		position: fixed;
 		top: 0;
+		transform: translateY(0);
 	}
 	#eu9-search-form {
 		height: 100vh;
+	}
+	.post-pagination .page-numbers {
+		width: 28px;
+		font-size: 12px;
+	}
+	.post-pagination .page-numbers, .post-pagination .page-numbers.next, .post-pagination .page-numbers.prev {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.post-pagination .page-numbers.next, .post-pagination .page-numbers.prev {
+		width: 30px;
 	}
 }
 @media (min-width: 1200px) {
