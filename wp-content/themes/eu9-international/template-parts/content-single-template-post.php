@@ -83,7 +83,7 @@ $diff = $current_time - $post_time;
                                 ?>
                                 </ul>
                             </div>
-                            <div class="post-content-column col-md-10 px-4">
+                            <div class="post-content-column col-md-10 px-md-4">
                                 <div class="wp-editor">
                                     <?php the_content();?>
                                 </div>
@@ -98,10 +98,12 @@ $diff = $current_time - $post_time;
                             $args_extra = array(
                                 'post_type' => 'post',
                                 'post_status' => 'publish',
+                                'orderby' => 'date',
+                                'order' => 'DESC',
+                                'post__not_in' => [$post_id],
+                                'category__in' => $category_ids,
                                 'posts_per_page' => 3,
-                                'orderby' => 'rand',
-                                'post__not_in'   => [$post_id],
-                                'category__in'   => $category_ids,
+                                'ignore_sticky_posts' => 1,
                             );
                             $extra = new WP_Query($args_extra);
                             while( $extra->have_posts() ) {
@@ -115,7 +117,7 @@ $diff = $current_time - $post_time;
                         </div>
                     </div>
                 </div>
-                <div class="post-sidebar col-xl-3 px-0 px-md-4 pe-md-0">
+                <div class="post-sidebar col-xl-3 px-0 px-xl-4 mt-5 mx-md-auto mx-xl-0">
                     <?php 
                     $sticky_posts = get_option('sticky_posts');
 

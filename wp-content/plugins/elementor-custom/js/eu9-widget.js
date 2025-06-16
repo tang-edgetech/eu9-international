@@ -1,11 +1,11 @@
 jQuery(document).ready(function($) {
     console.log('Reading');
-    $(document).on('click', '.elementor-widget-eu9-search-keyword #eu9-search-button', function(e) {
+    $(document).on('click', '.elementor-widget-eu9-search-keyword .eu9-search-button > .btn-search', function(e) {
         e.preventDefault();
         var $this = $(this),
             $parent = $this.parents('.eu9-search-button');
         $parent.addClass('overlay-search-opened');
-        $this.siblings('#eu9-search-form').fadeIn();
+        $this.siblings('.eu9-search-form').fadeIn();
         $('body').addClass('search-form-opened');
     });
 

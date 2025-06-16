@@ -169,7 +169,7 @@ class EU9_Search_Keyword_Widget extends Widget_Base {
                 <span class="d-none">Search</span>
                 <i class="fas fa-search"></i>
             </button>
-            <form class="eu9-search-form" id="eu9-search-form" role="search" method="get" action="<?php echo home_url('/'); ?>">
+            <form class="eu9-search-form" id="header-search-form" role="search" method="get" action="<?php echo home_url('/'); ?>">
                 <button type="button" class="btn btn-close" data-parent=".eu9-search-button"><span class="d-none">Close</span></button>
                 <div class="form-inner">
                     <input type="text" name="s"/>

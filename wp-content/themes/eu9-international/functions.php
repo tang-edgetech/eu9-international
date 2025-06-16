@@ -287,3 +287,20 @@ add_action('init', function () {
         remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
     }
 });
+
+function get_eu9_search_form() {
+    $home_url = esc_url(home_url('/'));
+    ob_start();
+    ?>
+    <form class="eu9-search-form" id="eu9-search-form" role="search" method="get" action="<?php echo $home_url; ?>">
+        <div class="form-inner">
+            <input type="text" name="s" placeholder="Type here to search..." value="<?php echo get_search_query(); ?>">
+            <button type="submit" class="btn btn-search">
+                <span class="d-none">Submit</span>
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </form>
+    <?php
+    return ob_get_clean();
+}
