@@ -14,18 +14,18 @@ $current_time = current_time('timestamp');
 $diff = $current_time - $post_time;
 
 ?>
-<div class="single-outer-box">
-    <div class="single-inner-row">
-        <div class="single-header">
+<div class="post-outer-box">
+    <div class="post-inner-row">
+        <div class="post-header">
             <div class="breadcrumb">
                 <div class="breadcrumb-item"><a href="<?php echo $home_url;?>" class="breadcrumb-link">Home</a></div>
                 <div class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></div>
                 <div class="breadcrumb-item"><span class="breadcrumb-link"><?php echo $post_title;?></span></div>
             </div>
         </div>
-        <div class="single-body">
-            <div class="single-body-inner d-md-flex">
-                <div class="post-main col-xl-9 px-0 px-md-4">
+        <div class="post-body">
+            <div class="post-body-inner d-md-flex">
+                <div class="post-main col-xl-9 px-0">
                     <div class="post-header">
                         <div class="post-category">
                         <?php if (!empty($categories)) {
@@ -60,13 +60,13 @@ $diff = $current_time - $post_time;
                             </div>
                         </div>
                     </div>
-                    <div class="post-body">
+                    <div class="post-content">
                         <div class="post-thumbnail mb-4">
                         <?php if( has_post_thumbnail() ) { 
                             echo '<img src="'.get_the_post_thumbnail_url().'" alt="'.$post_title.'"/>';
                         } ?>
                         </div>
-                        <div class="post-body-inner d-md-flex">
+                        <div class="post-content-inner d-md-flex pe-md-4">
                             <div class="social-media-share mb-5 mb-md-0 col-md-2 px-4">
                                 <ul class="social-media-list nav position-relative position-md-sticky text-center">
                                 <?php $social_media = array(
@@ -83,7 +83,7 @@ $diff = $current_time - $post_time;
                                 ?>
                                 </ul>
                             </div>
-                            <div class="post-body-column col-md-10 px-4">
+                            <div class="post-content-column col-md-10 px-4">
                                 <div class="wp-editor">
                                     <?php the_content();?>
                                 </div>
@@ -92,7 +92,7 @@ $diff = $current_time - $post_time;
                     </div>
                     <div class="post-footer">
                         <div class="extras">
-                            <h3 class="extra-title title-card">You may also like</h3>
+                            <h3 class="extra-title title-card"><span>You may also like</span></h3>
                             <div class="post-grid post-extra">
                             <?php
                             $args_extra = array(
@@ -115,7 +115,7 @@ $diff = $current_time - $post_time;
                         </div>
                     </div>
                 </div>
-                <div class="post-sidebar col-xl-3 px-0 px-md-4">
+                <div class="post-sidebar col-xl-3 px-0 px-md-4 pe-md-0">
                     <?php 
                     $sticky_posts = get_option('sticky_posts');
 
@@ -131,16 +131,20 @@ $diff = $current_time - $post_time;
                     $sticky_query = new WP_Query($args);
                     if ($sticky_query->have_posts()) {
                         echo '<div class="sidebar-post-grid">';
-                        echo '<h3 class="title-card">Featured</h3>';
+                        echo '<h3 class="title-card"><span>Featured</span></h3>';
+                        echo '<div class="post-grid post-layout-horizontal">';
                         while ($sticky_query->have_posts()) {
                             $sticky_query->the_post();
                             get_template_part('template-parts/template-post-item', 'sidebar', array('post_id' => get_the_ID()) );
                         }
                         wp_reset_postdata();
+                        echo '</div>';
                     } else {
                         echo '<div class="sidebar-post-grid post-empty">';
-                        echo '<h3 class="title-card">Featured</h3>';
+                        echo '<h3 class="title-card"><span>Featured</span></h3>';
+                        echo '<div class="post-grid">';
                         get_template_part('template-parts/template-post-item', 'empty' );
+                        echo '</div>';
                     }
                     ?>
                     </div>

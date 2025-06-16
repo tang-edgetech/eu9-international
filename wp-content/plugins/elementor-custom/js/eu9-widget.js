@@ -6,6 +6,7 @@ jQuery(document).ready(function($) {
             $parent = $this.parents('.eu9-search-button');
         $parent.addClass('overlay-search-opened');
         $this.siblings('#eu9-search-form').fadeIn();
+        $('body').addClass('search-form-opened');
     });
 
     $(document).on('click', '.elementor-widget-eu9-search-keyword .btn-close', function(e) {
@@ -17,6 +18,7 @@ jQuery(document).ready(function($) {
         if( $parent.hasClass('overlay-search-opened') ) {
             $parent.removeClass('overlay-search-opened');
             $form.fadeOut();
+            $('body').removeClass('search-form-opened');
         }
     });
 });

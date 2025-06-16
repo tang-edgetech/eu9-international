@@ -105,6 +105,18 @@
 		width: 100%;
 	}
 }
+@media (max-width: 1199px) {
+	#page {
+		padding-top: 50px;
+	}
+	#mobile-menu-navigation {
+		position: fixed;
+		top: 0;
+	}
+	#eu9-search-form {
+		height: 100vh;
+	}
+}
 @media (min-width: 1200px) {
     .d-xl-none {
         display: none;
@@ -157,7 +169,7 @@
 	.col-xl-12 {
 		width: 100%;
 	}
-    .single-inner-row {
+    .post-inner-row {
         max-width: 1200px;
     }
 }
@@ -215,7 +227,7 @@
 	}
 }
 @media (min-width: 1800px) {
-    .single-inner-row {
+    .post-inner-row {
         max-width: 1400px;
     }
 }

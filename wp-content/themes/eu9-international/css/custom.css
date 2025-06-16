@@ -1,3 +1,57 @@
 #masthead .custom-social-media .elementor-grid-item > a:not(:hover) {
     background-color: transparent;
 }
+#mobile-menu-navigation {
+    transform: translateY(0);
+    transition: all 0.3s linear;
+}
+#mobile-menu-navigation.scroll-down {
+    transform: translateY(-100%);
+}
+#mobile-menu-navigation .eael-simple-menu-toggle svg {
+    fill: #fff;
+}
+#mobile-menu-navigation .eael-simple-menu-toggle svg rect {
+    stroke: #fff;
+    transition: all 0.3s ease;
+}
+#mobile-menu-navigation.menu-opened .eael-simple-menu-toggle svg .st0 {
+    transform: rotate(45deg) translate(11px, -14px);
+}
+#mobile-menu-navigation.menu-opened .eael-simple-menu-toggle svg .st1 {
+    opacity: 0;
+}
+#mobile-menu-navigation.menu-opened .eael-simple-menu-toggle svg .st2 {
+    transform: rotate(-45deg) translate(-25px, 0px);
+}
+.post-outer-box {
+    padding: 60px 0;
+}
+.post-inner-row {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 750px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: var(--primary-white);
+    border: 1px solid rgba(68,68,68,0.15);
+}
+.post-inner-row > * {
+    width: 100%;
+}
+.post-header {
+    background-color: rgba(68,68,68,0.06);
+    border-bottom: 1px solid rgba(68,68,68,0.15);
+}
+.post-body {
+    min-height: 250px;
+    padding: 30px 25px;
+}
+.post-body-inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+.post-content {
+    display: block;
+    width: 100%;
+}
