@@ -288,6 +288,13 @@ add_action('init', function () {
     }
 });
 
+function eu9_search_only_posts( $query ) {
+    if ( $query->is_search && !is_admin() && $query->is_main_query() ) {
+        $query->set( 'post_type', 'post' );
+    }
+}
+add_action( 'pre_get_posts', 'eu9_search_only_posts' );
+
 function get_eu9_search_form() {
     $home_url = esc_url(home_url('/'));
     ob_start();
@@ -303,4 +310,15 @@ function get_eu9_search_form() {
     </form>
     <?php
     return ob_get_clean();
+}
+
+function get_eu9_breadcrumb($page_title) {
+    $home_url = esc_url(home_url('/'));
+	?>
+	<div class="breadcrumb">
+		<div class="breadcrumb-item"><a href="<?php echo $home_url;?>" class="breadcrumb-link">Home</a></div>
+		<div class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></div>
+		<div class="breadcrumb-item"><span class="breadcrumb-link"><?php echo $page_title;?></span></div>
+	</div>
+	<?php
 }

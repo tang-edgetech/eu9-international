@@ -36,7 +36,7 @@
 	.post-grid.post-listing-grid .post-item .post-excerpt {
     	-webkit-line-clamp: 4;
 	}
-	.post-grid.post-listing-grid .post-item:first-child .post-excerpt {
+	.post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-excerpt {
     	-webkit-line-clamp: 5;
 	}
 	.post-grid.post-layout-horizontal .post-thumbnail {
@@ -54,12 +54,12 @@
 	.post-inner-row {
 		max-width: 100%;
 	}
-	.post-grid.post-listing-grid .post-item:first-child .post-thumbnail {
+	.post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-thumbnail {
 		aspect-ratio: 1.727;
 		width: 100%;
 		height: 100%;
 	}
-	.post-grid.post-listing-grid .post-item:first-child .post-entry {
+	.post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-entry {
 		position: absolute;
 		max-width: 70%;
 		width: 100%;
@@ -71,6 +71,13 @@
 	}
 	.single .post-content .post-thumbnail {
 		height: 630px;
+	}
+	.single .social-media-share .social-media-list {
+		position: sticky;
+		top: 70px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+    	gap: 6px;
 	}
 	.post-grid.post-extra {
 		grid-template-columns: repeat(3, 1fr);
@@ -200,6 +207,9 @@
 	.post-pagination .page-numbers.next, .post-pagination .page-numbers.prev {
 		width: 30px;
 	}
+    .post-inner-row {
+        max-width: 1024px;
+    }
 }
 @media (min-width: 1200px) {
     .d-xl-none {

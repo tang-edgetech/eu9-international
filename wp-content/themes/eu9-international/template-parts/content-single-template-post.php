@@ -18,15 +18,13 @@ $diff = $current_time - $post_time;
     <div class="post-inner-row">
         <div class="post-header">
             <div class="breadcrumb">
-                <div class="breadcrumb-item"><a href="<?php echo $home_url;?>" class="breadcrumb-link">Home</a></div>
-                <div class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></div>
-                <div class="breadcrumb-item"><span class="breadcrumb-link"><?php echo $post_title;?></span></div>
+                <?php echo get_eu9_breadcrumb($post_title);?>
             </div>
         </div>
         <div class="post-body">
             <div class="post-body-inner d-md-flex">
                 <div class="post-main col-xl-9 px-0">
-                    <div class="post-header">
+                    <div class="post-head">
                         <div class="post-category">
                         <?php if (!empty($categories)) {
                             $first_category = $categories[0];
@@ -68,7 +66,7 @@ $diff = $current_time - $post_time;
                         </div>
                         <div class="post-content-inner d-md-flex pe-md-4">
                             <div class="social-media-share mb-5 mb-md-0 col-md-2 px-4">
-                                <ul class="social-media-list nav position-relative position-md-sticky text-center">
+                                <ul class="social-media-list nav text-center">
                                 <?php $social_media = array(
                                     'facebook' => 'Facebook',
                                     'instagram' => 'Instagram',

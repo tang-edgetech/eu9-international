@@ -58,3 +58,13 @@
     display: block;
     width: 100%;
 }
+.social-media-list .social-media-item {
+    background-color: #999;
+    aspect-ratio: 1;
+}
+.social-media-list .social-media-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
