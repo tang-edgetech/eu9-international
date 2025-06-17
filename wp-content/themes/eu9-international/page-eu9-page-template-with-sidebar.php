@@ -27,7 +27,7 @@ else {
                 <div class="post-body">
                     <div class="post-body-inner d-md-flex">
                         <div class="post-main col-12 col-xl-9 px-0">
-                            <div class="post-content pe-md-4">
+                            <div class="post-content pe-xl-4">
                                 <?php
                                 // Elementor Content Rendering
                                 while ( have_posts() ) : the_post();

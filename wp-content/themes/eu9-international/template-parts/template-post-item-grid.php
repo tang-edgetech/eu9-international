@@ -23,7 +23,6 @@ if ( count( $words ) > $word_limit ) {
 }
 
 if( $type == 'listing' ) { 
-    
 ?>
 <div class="post-item post-item-id-<?php echo $post_id;?> item-<?php echo $index;?>" id="post-item-id-<?php echo $post_id;?>">
     <div class="post-item-inner">

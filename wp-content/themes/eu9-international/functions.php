@@ -140,6 +140,7 @@ add_action( 'widgets_init', 'eu9_international_widgets_init' );
  */
 function eu9_international_scripts() {
     wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css', [], null);
+	wp_enqueue_style( 'swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), _S_VERSION, 'all' );
 	wp_enqueue_style( 'eu9-international-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'eu9-international-style', 'rtl', 'replace' );
     wp_enqueue_style( 'eu9-custom', get_template_directory_uri() . '/css/custom.css', array(), _S_VERSION, 'all' );
@@ -150,6 +151,7 @@ function eu9_international_scripts() {
 
 	wp_enqueue_script('jQuery', 'https://code.jquery.com/jquery-3.7.1.min.js', [], null, true);
 	wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', [], null, true);
+	wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', [], null, true);
 	wp_enqueue_script( 'eu9-international-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'eu9_international_scripts' );

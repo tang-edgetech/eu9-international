@@ -22,3 +22,31 @@ jQuery(document).ready(function($) {
         }
     });
 });
+
+jQuery(window).on('load', function () {
+
+    if( $('.post-grid-swiper').length > 0 ) {
+        $('.post-grid-swiper').each(function() {
+            var $this = $(this),
+                $unique_id = $this.attr('data-unique-id'),
+                $ppp = parseInt($this.attr('data-ppp')),
+                $spaceBetween = parseInt($this.attr('data-spaceBetween'));
+            new Swiper(this, {
+                spaceBetween: $spaceBetween,
+                loop: true,
+                navigation: {
+                    prevEl: '.btn-prev-' + String($unique_id),
+                    nextEl: '.btn-next-' + String($unique_id),
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                    }, 
+                    768: {
+                        slidesPerView: $ppp,
+                    }
+                }
+            });
+        });
+    }
+});
