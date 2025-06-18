@@ -1,6 +1,9 @@
 body.search-form-opened {
     overflow: hidden;
 }
+.eael-simple-menu-container .eael-simple-menu-toggle {
+    left: 0;
+}
 .eu9-copyright {
     margin-bottom: 0;
     font-size: 14px;
@@ -121,6 +124,12 @@ body.search-form-opened {
 .btn-close::after {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
+.elementor-widget h1 > a, .elementor-widget h2 > a, .elementor-widget h3 > a, .elementor-widget h4 > a, .elementor-widget h5 > a, .elementor-widget h6 > a {
+    color: inherit;
+}
+.elementor-widget a:hover {
+    opacity: 0.8;
+}
 .elementor-widget .post-grid {
     display: grid;
     gap: 30px;
@@ -142,7 +151,7 @@ body.search-form-opened {
     font-size: 13px;
     line-height: 16px;
     font-weight: 400;
-    color: #034ea2;
+    color: #ddd;
 }
 .elementor-widget .post-category a:hover {
     text-decoration: underline;
@@ -155,7 +164,7 @@ body.search-form-opened {
 .elementor-widget .post-title {
     font-size: 19px;
     line-height: 26px;
-    color: #444;
+    color: #fff;
 }
 .elementor-widget .post-thumbnail {
     aspect-ratio: 1.7857;

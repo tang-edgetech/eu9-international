@@ -1,4 +1,13 @@
 @media (max-width: 767px) {
+	#mobile-menu-navigation .eael-simple-menu-container::before {
+		top: 45px;
+		left: -15px;
+	}
+	#mobile-menu-navigation .eael-simple-menu {
+		top: 52px;
+		left: 0;
+		height: calc( 100vh - 52px );
+	}
 	.post-outer-box {
 		padding: 50px 0;
 	}
@@ -48,6 +57,14 @@
 	}
 	.single .post-content .post-thumbnail {
 		height: 250px;
+	}
+	#error-404 .eu9-search-form {
+		padding: 20px;
+	}
+	#error-404 .eu9-search-form .btn-search {
+		width: 52px;
+		height: 52px;
+		padding: 12px;
 	}
 }
 @media (min-width: 768px) {
@@ -187,6 +204,15 @@
 		width: 100%;
 	}
 }
+@media (min-width: 768px) and (max-width: 1199px) {
+	#mobile-menu-navigation .eael-simple-menu-container::before {
+		top: 50px;
+		left: -25px;
+	}
+	#mobile-menu-navigation .eael-simple-menu {
+		left: 0;
+	}
+}
 @media (max-width: 1199px) {
 	#page {
 		padding-top: 50px;
@@ -195,6 +221,48 @@
 		position: fixed;
 		top: 0;
 		transform: translateY(0);
+	}
+	#mobile-menu-navigation .eael-simple-menu-container::before {
+		content: '';
+		transition: all 0.35s ease;
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		background: rgba(0, 0, 0, 0.7);
+		transition: all 0.25s ease;
+		opacity: 0;
+		visibility: hidden;
+		z-index: 1;
+	}
+	#mobile-menu-navigation .eael-simple-menu-container.menu-slidein::before {
+		opacity: 1;
+		visibility: visible;
+	}
+	#mobile-menu-navigation .eael-simple-menu {
+		display: flex!important;
+		flex-direction: column;
+		position: fixed;
+		width: 100%;
+		max-width: 300px;
+		height: calc( 100vh - 50px );
+		background: #000;
+		transform: translateX(-100%);
+		transition: all 0.35s ease;
+		z-index: 2;
+	}
+	#mobile-menu-navigation .menu-slidein .eael-simple-menu {
+		transform: translateX(0);
+	}
+	#mobile-menu-navigation .eael-simple-menu .menu-item, #mobile-menu-navigation .eael-simple-menu .menu-item > a {
+		display: block;
+		width: 100%;
+	}
+	#mobile-menu-navigation .eael-simple-menu .menu-item > a {
+		text-align: left;
+	}
+	.post-main {
+		width: 100%;
+    	margin-bottom: 50px;
 	}
 	.post-pagination .page-numbers {
 		width: 28px;

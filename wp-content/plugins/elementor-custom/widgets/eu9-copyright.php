@@ -116,6 +116,18 @@ class EU9_Copyright_Widget extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+            'post_title_color',
+            [
+                'label' => __('Post Title Color', 'elementor-custom'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#ffffff',
+                'selectors' => [
+                    '{{WRAPPER}} .eu9-copyright' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
         $this->end_controls_section();
     }
 

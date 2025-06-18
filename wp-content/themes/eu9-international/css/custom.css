@@ -27,6 +27,9 @@
 #mobile-menu-navigation.menu-opened .eael-simple-menu-toggle svg .st2 {
     transform: rotate(-45deg) translate(-25px, 0px);
 }
+.elementor a:hover, .page-template a:hover {
+    opacity: 0.8;
+}
 .post-outer-box {
     padding: 60px 0;
 }
@@ -36,15 +39,15 @@
     max-width: 750px;
     width: 100%;
     margin: 0 auto;
-    background-color: var(--primary-white);
-    border: 1px solid rgba(68,68,68,0.15);
+    background-color: rgb(28, 27, 27);
+    border: 1px solid #5a6268;
 }
 .post-inner-row > * {
     width: 100%;
 }
 .post-header {
-    background-color: rgba(68,68,68,0.06);
-    border-bottom: 1px solid rgba(68,68,68,0.15);
+    background-color: #292421;
+    border-bottom: 1px solid #5a6268;
 }
 .post-body {
     min-height: 250px;
@@ -53,6 +56,9 @@
 .post-body-inner {
     display: flex;
     flex-wrap: wrap;
+}
+.post-title {
+    color: var(--primary-white);
 }
 .post-content {
     display: block;

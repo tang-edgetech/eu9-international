@@ -23,7 +23,41 @@ $(document).ready(function() {
 		});
 	}
 
+	$(document).on('click', '#mobile-menu-navigation .eael-simple-menu-toggle', function (e) {
+		e.preventDefault();
+		var $this = $(this),
+			$parent = $this.parents('.eael-simple-menu-container'),
+			$sibling = $this.siblings('.eael-simple-menu');
+		if( $parent.hasClass('menu-slidein') ) {
+			$parent.removeClass('menu-slidein');
+			$this.prop('disabled', true);
+			setTimeout(function() {
+				$this.prop('disabled', false);
+			}, 300);
+		}
+		else {
+			$parent.addClass('menu-slidein');
+			$this.prop('disabled', true);
+			setTimeout(function() {
+				$this.prop('disabled', false);
+			}, 300);
+		}
+	});
+
     document.querySelector('#mobile-menu-navigation .eael-simple-menu-toggle').addEventListener('click', function () {
       	document.getElementById('mobile-menu-navigation').classList.toggle('menu-opened');
     });
+
+	// Copy the .elementor-grid-item elements from #custom-social-media
+	var copiedItems = $('#custom-social-media .elementor-grid-item').clone();
+
+	// Now you can append them somewhere else, for example into another container:
+	$('#target-container').append(copiedItems);
+
+	$('#masthead .eael-simple-menu .menu-item').each(function() {
+		var $this = $(this);
+		if( $this.hasClass('current-menu-item') && !$this.children('a').hasClass('eael-item-active') ) {
+			$this.children('a').addClass('eael-item-active');
+		}
+	});
 });
