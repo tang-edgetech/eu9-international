@@ -34,12 +34,100 @@ class EU9_Magic_Post_Grid_Widget extends Widget_Base {
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
+
+        $this->add_control(
+            'posts_per_page',
+            [
+                'label' => __('Posts Per Page', 'elementor-custom'),
+                'type' => Controls_Manager::SLIDER,
+                'range' => [
+                    '' => [
+                        'min' => 1,
+                        'max' => 5,
+                    ],
+                ],
+                'default' => [
+                    'size' => 4,
+                ],
+            ]
+        );
+
         $this->end_controls_section();
     }
     
     protected function render() {
         $settings = $this->get_settings_for_display();
-
+        $ppp = $settings['posts_per_page'];
+        $args = array(
+            'post_type' => 'post',
+            'post_status' => 'publish',
+            'orderby' => 'date',
+            'order' => 'desc',
+            'posts_per_page' => $ppp,
+        );
+        $query = new \WP_Query($args);
+        ?>
+        <div class="magic-post-grid">
+        <?php
+        if( $query->have_posts() ) {
+            while( $query->have_posts() ) {
+                $query->the_post();
+                $post_id = get_the_ID();
+                $post_title = get_the_title();
+                $categories = get_the_category();
+                $category_ids = array();
+                $cat_labels = '';
+                if (!empty($categories)) {
+                    foreach( $categories as $cat ) {
+                        $cat_labels .= '<a href="'.get_category_link($cat->term_id).'">'.$cat->name.'</a>';
+                    }
+                }
+                $field_settings = get_field('settings');
+                $reading_duration = $field_settings['reading_duration'];
+                $post_time = get_the_time('U');
+                $current_time = current_time('timestamp');
+                $diff = $current_time - $post_time;
+                if ($diff < MINUTE_IN_SECONDS) {
+                    $time_diff = $diff . ' seconds ago';
+                } elseif ($diff < HOUR_IN_SECONDS) {
+                    $time_diff = floor($diff / MINUTE_IN_SECONDS) . ' minutes ago';
+                } elseif ($diff < DAY_IN_SECONDS) {
+                    $time_diff = floor($diff / HOUR_IN_SECONDS) . ' hours ago';
+                } elseif ($diff < WEEK_IN_SECONDS) {
+                    $time_diff = floor($diff / DAY_IN_SECONDS) . ' days ago';
+                } elseif ($diff < MONTH_IN_SECONDS) {
+                    $time_diff = floor($diff / WEEK_IN_SECONDS) . ' weeks ago';
+                } elseif ($diff < YEAR_IN_SECONDS) {
+                    $time_diff = floor($diff / MONTH_IN_SECONDS) . ' months ago';
+                } else {
+                    $time_diff = floor($diff / YEAR_IN_SECONDS) . ' years ago';
+                }
+            ?>
+            <div class="post-item post-item-<?php echo $post_id;?>" id="post-item-<?php echo $post_id;?>">
+                    <div class="post-thumbnail">
+                        <a href="<?php echo get_permalink();?>"class="post-link">
+                        <?php
+                        if( has_post_thumbnail() ) {
+                            echo '<img src="'.get_the_post_thumbnail_url().'" class="img-fluid w-100"/>';
+                        }
+                        ?>
+                        </a>
+                    </div>
+                    <div class="post-entry post-caption">
+                        <div class="post-category"><?php echo $cat_labels;?></div>
+                        <h4 class="post-title"><a href="<?php echo get_permalink();?>"><?php echo $post_title;?></a></h4>';
+                        <div class="post-meta">
+                            <div class="meta-item meta-time-passed"><i class="far fa-clock"></i><?php echo $time_diff;?></div>
+                        </div>
+                    </div>
+            </div>
+            <?php
+            }
+            wp_reset_postdata();
+        }
+        ?>
+        </div>
+        <?php
     }
 
     protected function _content_template() {

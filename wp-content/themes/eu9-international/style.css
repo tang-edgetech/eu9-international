@@ -413,11 +413,11 @@ blockquote {
 	border-radius: 3px;
 }
 .post-pagination .page-numbers:hover {
-	background-color: rgba(68,68,68,0.1);
+	background-color: rgba(239, 0, 48, 0.45);
 }
 .post-pagination .page-numbers.current, .post-pagination .page-numbers.next, .post-pagination .page-numbers.prev {
 	color: #fff;
-	background: #034ea2;
+	background-color: #ef002e;
 }
 .post-pagination .page-numbers.next i, .post-pagination .page-numbers.prev i {
 	
@@ -433,7 +433,7 @@ blockquote {
 	transform: translateY(-50%);
 	width: 120px;
 	padding: 8px 20px;
-	background: #034ea2;
+	background-color: #ef002e;
 }
 .post-pagination .page-numbers.next:hover, .post-pagination .page-numbers.prev:hover {
 	background: #00326b;
@@ -452,4 +452,10 @@ blockquote {
 .post-grid.post-extra .post-title {
 	font-size: 19px;
 	line-height: 26px;
+}
+.post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-title, .post-grid.post-listing-grid.post-first-highlight .post-item:first-child div[class^='post-'] > a {
+	color: #333;
+}
+.post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-excerpt, .post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-excerpt p {
+	color: #444;
 }

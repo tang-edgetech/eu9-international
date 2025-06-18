@@ -185,7 +185,10 @@ body.search-form-opened {
     padding: 0 15px;
     font-size: 11px;
     height: 26px;
-    border: 1px solid rgba(68,68,68,0.2);
+    border: 1px solid #fff;
+}
+.post-grid-listing a, .swiper-btn {
+    color: #fff;
 }
 .post-grid-listing a:hover, .swiper-btn:hover {
     border-color: rgba(2,136,209,0.5);
@@ -196,15 +199,48 @@ body.search-form-opened {
 }
 .swiper-btn {
     background-color: transparent;
-    border: 1px solid rgba(68,68,68,0.2);
+    border: 1px solid #fff;
     text-align: center;
     padding: 0;
     width: 26px;
     height: 26px;
 }
+.elementor-widget .magic-post-grid .post-item {
+    vertical-align: top;
+    float: left;
+}
+.elementor-widget .magic-post-grid .post-thumbnail {
+    aspect-ratio: unset;
+    margin-bottom: 0;
+    box-shadow: 0 0 20px rgba(0,0,0,.8);
+}
+.elementor-widget .magic-post-grid .post-thumbnail::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+.elementor-widget .magic-post-grid .post-item:hover .post-thumbnail::before {
+    opacity: 0.3;
+}
 @media screen and (max-width: 767px) {
     .eu9-search-button form .form-inner {
         padding: 0 25px;
+    }
+    .elementor-widget .magic-post-grid {
+        gap: 15px;
+    }
+}
+@media screen and (max-width: 1199px) {
+    .elementor-widget .magic-post-grid {
+        display: grid;
     }
 }
 @media screen and (max-width: 1199px) {
@@ -216,5 +252,43 @@ body.search-form-opened {
     .elementor-widget .post-title {
         font-size: 17px;
         line-height: 24px;
+    }
+    .elementor-widget .magic-post-grid {
+        gap: 20px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .elementor-widget .magic-post-grid {
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        height: 520px;
+        overflow: hidden;
+    }
+    .elementor-widget .magic-post-grid .post-item {
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 10em;
+        flex: 1 0 10em;
+        padding: 0;
+        transition: flex-basis .3s ease-in-out,-webkit-flex-basis .3s ease-in-out,-ms-flex-preferred-size .3s ease-in-out;
+        flex-shrink: 1;
+    }
+    .elementor-widget .magic-post-grid .post-item:hover {
+        flex-basis: 25em;
+    }
+    .elementor-widget .magic-post-grid .post-item .post-entry {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 300px;
+        padding: 25px;
+        z-index: 2;
     }
 }
