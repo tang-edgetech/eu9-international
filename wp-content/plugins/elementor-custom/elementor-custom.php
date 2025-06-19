@@ -18,17 +18,17 @@ function eu9_register_custom_widgets( $widgets_manager ) {
     require_once( __DIR__ . '/widgets/eu9-magic-post-grid.php' );
     require_once( __DIR__ . '/widgets/eu9-post-tag.php' );
     require_once( __DIR__ . '/widgets/eu9-post-list.php' );
-    require_once( __DIR__ . '/widgets/eu9-post-list-by-tag.php' );
     require_once( __DIR__ . '/widgets/eu9-post-list-slider.php' );
     require_once( __DIR__ . '/widgets/eu9-search-keyword.php' );
+    require_once( __DIR__ . '/widgets/eu9-post-list-special.php' );
     $widgets_manager->register( new \EU9_Copyright_Widget() );
     $widgets_manager->register( new \EU9_DateTime_Picker_Widget() );
     $widgets_manager->register( new \EU9_Magic_Post_Grid_Widget () );
     $widgets_manager->register( new \EU9_Post_Tag_Widget () );
     $widgets_manager->register( new \EU9_Post_List_Widget () );
-    $widgets_manager->register( new \EU9_Post_List_By_Tag_Widget () );
     $widgets_manager->register( new \EU9_Post_List_Slider_Widget () );
     $widgets_manager->register( new \EU9_Search_Keyword_Widget () );
+    $widgets_manager->register( new \EU9_Post_List_Special_Widget () );
 }
 add_action( 'elementor/widgets/register', 'eu9_register_custom_widgets' );
 

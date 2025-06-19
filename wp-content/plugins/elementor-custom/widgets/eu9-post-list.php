@@ -191,6 +191,7 @@ class EU9_Post_List_Widget extends Widget_Base {
             'post_type' => 'post',
             'post_status' => 'publish',
             'posts_per_page' => $settings['posts_per_page']['size'],
+            'ignore_sticky_posts' => true,
         ];
 
         if (!empty($settings['post_category'])) {

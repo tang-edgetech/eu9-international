@@ -57,19 +57,21 @@ class EU9_Magic_Post_Grid_Widget extends Widget_Base {
     
     protected function render() {
         $settings = $this->get_settings_for_display();
-        $ppp = $settings['posts_per_page'];
+        $ppp = intval($settings['posts_per_page']['size']);
         $args = array(
             'post_type' => 'post',
             'post_status' => 'publish',
+            'posts_per_page' => $ppp,
             'orderby' => 'date',
             'order' => 'desc',
-            'posts_per_page' => $ppp,
+            'ignore_sticky_posts' => true,
         );
         $query = new \WP_Query($args);
         ?>
-        <div class="magic-post-grid">
+        <div class="magic-post-grid magic-<?php echo $ppp;?>">
         <?php
         if( $query->have_posts() ) {
+            $index = 1;
             while( $query->have_posts() ) {
                 $query->the_post();
                 $post_id = get_the_ID();
@@ -102,26 +104,35 @@ class EU9_Magic_Post_Grid_Widget extends Widget_Base {
                 } else {
                     $time_diff = floor($diff / YEAR_IN_SECONDS) . ' years ago';
                 }
+                if( has_excerpt() ) {
+                    $excerpt = get_the_excerpt();
+                }
+                else {
+                    $content = wp_strip_all_tags(strip_shortcodes(get_the_content()));
+                    $excerpt = wp_trim_words($content, 20, '');
+                }
             ?>
-            <div class="post-item post-item-<?php echo $post_id;?>" id="post-item-<?php echo $post_id;?>">
-                    <div class="post-thumbnail">
-                        <a href="<?php echo get_permalink();?>"class="post-link">
-                        <?php
-                        if( has_post_thumbnail() ) {
-                            echo '<img src="'.get_the_post_thumbnail_url().'" class="img-fluid w-100"/>';
-                        }
-                        ?>
-                        </a>
+            <div class="post-item post-item-<?php echo $post_id;?> emr-<?php echo $index;?>" id="post-item-<?php echo $post_id;?>">
+                <div class="post-thumbnail">
+                    <a href="<?php echo get_permalink();?>"class="post-link">
+                    <?php
+                    if( has_post_thumbnail() ) {
+                        echo '<img src="'.get_the_post_thumbnail_url().'" class="img-fluid w-100"/>';
+                    }
+                    ?>
+                    </a>    
+                </div>
+                <div class="post-entry post-caption">
+                    <div class="post-category"><?php echo $cat_labels;?></div>
+                    <h4 class="post-title"><a href="<?php echo get_permalink();?>"><?php echo $post_title;?></a></h4>
+                    <div class="post-meta">
+                        <div class="meta-item meta-time-passed"><i class="far fa-clock"></i><?php echo $time_diff;?></div>
                     </div>
-                    <div class="post-entry post-caption">
-                        <div class="post-category"><?php echo $cat_labels;?></div>
-                        <h4 class="post-title"><a href="<?php echo get_permalink();?>"><?php echo $post_title;?></a></h4>';
-                        <div class="post-meta">
-                            <div class="meta-item meta-time-passed"><i class="far fa-clock"></i><?php echo $time_diff;?></div>
-                        </div>
-                    </div>
+                    <div class="post-excerpt"><?php echo $excerpt;?></div>
+                </div>
             </div>
             <?php
+                $index++;
             }
             wp_reset_postdata();
         }

@@ -65,18 +65,22 @@ $diff = $current_time - $post_time;
                         } ?>
                         </div>
                         <div class="post-content-inner d-md-flex pe-md-4">
-                            <div class="social-media-share mb-5 mb-md-0 col-md-2 px-4">
+                            <div class="social-media-share mb-5 mb-md-0 col-md-2 px-3 px-lg-4">
                                 <ul class="social-media-list nav text-center">
                                 <?php $social_media = array(
                                     'facebook' => 'Facebook',
                                     'instagram' => 'Instagram',
+                                    'messenger' => 'Messenger',
                                     'twitter' => 'Twitter',
-                                    'whatsapp' => 'WhatsApp',
                                     'linkedin' => 'LinkedIn',
+                                    'whatsapp' => 'WhatsApp',
                                     'pinterest' => 'Pinterest',
+                                    'telegram' => 'Telegram',
+                                    'line' => 'Line',
+                                    'wechat' => 'Wechat',
                                 );
                                 foreach( $social_media as $slug => $label) {
-                                    echo '<li class="social-media-item '.$slug.'"><a href="#" class="btn btn-icon"><span class="d-none">'.$label.'</span></a></li>';
+                                    echo '<li class="social-media-item '.$slug.'"><a href="#" class="btn btn-icon share-button" data-network="'.$slug.'"><span class="d-none">'.$label.'</span></a></li>';
                                 }
                                 ?>
                                 </ul>

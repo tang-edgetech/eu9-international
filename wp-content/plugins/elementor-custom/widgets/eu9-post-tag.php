@@ -82,11 +82,11 @@ class EU9_Post_Tag_Widget extends Widget_Base {
         <div class="eu9-post-tag">
             <# if ( settings.selected_tags && settings.selected_tags.length ) { #>
                 <# _.each( settings.selected_tags, function( tagId ) { #>
-                    <span class="tag-link">{{ tagId }}</span>
+                    <span class="tag-link text-white">{{ tagId }}</span>
                 <# }); #>
             <# } else { #>
-                <span class="tag-link">Sample Tag A</span>
-                <span class="tag-link">Sample Tag B</span>
+                <span class="tag-link text-white">Sample Tag A</span>
+                <span class="tag-link text-white">Sample Tag B</span>
             <# } #>
         </div>
         <?php

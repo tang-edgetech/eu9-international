@@ -32,6 +32,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	--fw-black: 900;
 	--primary-white: #fff;
 	--primary-blue: #034ea2;
+	--primary-red: #ef002e;
 }
 * {
 	box-sizing: border-box;
@@ -91,7 +92,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .post-grid h1[class^='post-'] a, .post-grid 
     display: block;
     width: 100%;
 }
-.input-control, .input-control:hover, .input-control:focus, .input-control:visited, input, input.input-control, input.input-control:hover, input.input-control:focus, input.input-control:visited, textarea, textarea.input-control, textarea.input-control:hover, textarea.input-control:focus, textarea.input-control:visited, select, select.input-control, select.input-control:hover, select.input-control:focus, select.input-control:visited {
+.input-control, .input-control:hover, .input-control:focus, .input-control:visited, input, input.input-control, input.input-control:hover, input.input-control:focus, input.input-control:visited, textarea, textarea.input-control, textarea.input-control:hover, textarea.input-control:focus, textarea.input-control:visited, select, select.input-control, select.input-control:hover, select.input-control:focus, select.input-control:visited, .share-button, .share-button:hover, .share-button:focus, .share-button:visited {
     outline: none;
     border: none;
     box-shadow: none;
@@ -119,6 +120,9 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .post-grid h1[class^='post-'] a, .post-grid 
 	text-decoration: none;
 	font-size: 14px;
 	line-height: 24px;
+}
+.elementor button, .elementor button:hover, .elementor button:focus, .elementor button:visited, .page-template button, .page-template button:hover, .page-template button:focus, .page-template button:visited {
+    box-shadow: none;
 }
 .divider {
 	display: block;
@@ -235,7 +239,7 @@ blockquote {
 	line-height: 26px;
 }
 #error-404 .eu9-search-form .btn-search {
-	background-color: #ef002e;
+	background-color: var(--primary-red);
 	color: var(--primary-white);
 	width: 125px;
 }
@@ -289,13 +293,13 @@ blockquote {
 	font-size: 16px;
 	line-height: 24px;
 	font-weight: var(--fw-bold);
-	border-bottom: 2px solid #ef002e;
+	border-bottom: 2px solid var(--primary-red);
 }
 .title-card span {
 	font-size: inherit;
 	font-weight: inherit;
 	line-height: inherit;
-	background-color: #ef002e;
+	background-color: var(--primary-red);
 	color: #fff;
 	padding: 4px 14px 5px;
     display: -webkit-box;
@@ -328,8 +332,12 @@ blockquote {
 	object-position: center center;
 }
 .post-category a {
+    display: inline-block;
 	font-size: 15px;
 	line-height: 22px;
+}
+.post-grid .post-item .post-category a:hover {
+    text-decoration: underline;
 }
 .post-title {
 	color: #333;
@@ -378,6 +386,10 @@ blockquote {
 .post-grid.post-layout-horizontal .post-category {
 	margin-bottom: 5px;
 }
+.post-grid.post-layout-horizontal .post-category a {
+    font-size: 13px;
+    line-height: 16px;
+}
 .post-grid.post-layout-horizontal .post-title {
 	font-size: 14px;
 	line-height: 20px;
@@ -417,7 +429,7 @@ blockquote {
 }
 .post-pagination .page-numbers.current, .post-pagination .page-numbers.next, .post-pagination .page-numbers.prev {
 	color: #fff;
-	background-color: #ef002e;
+	background-color: var(--primary-red);
 }
 .post-pagination .page-numbers.next i, .post-pagination .page-numbers.prev i {
 	
@@ -433,7 +445,7 @@ blockquote {
 	transform: translateY(-50%);
 	width: 120px;
 	padding: 8px 20px;
-	background-color: #ef002e;
+	background-color: var(--primary-red);
 }
 .post-pagination .page-numbers.next:hover, .post-pagination .page-numbers.prev:hover {
 	background: #00326b;

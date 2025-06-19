@@ -39,6 +39,7 @@ get_header();
 										// 'posts_per_page' => $ppp,
 										'category_name'  => $category,
 										'paged' => $paged,
+                                        'ignore_sticky_posts' => true,
 									);
 									$items = new WP_Query($args);
 									if( $items->have_posts() ) {
