@@ -15,13 +15,17 @@ body.search-form-opened {
     flex-wrap: wrap;
     gap: 6px;
 }
-.eu9-post-tag > a {
+.elementor-widget .eu9-post-tag > a {
     background: #ffffff33;
     color: #fff;
     border: none;
     padding: 8px 10px;
     font-size: 14px;
     line-height: 1;
+}
+.elementor-widget .eu9-post-tag > a:hover {
+	background-color: #EF002E;
+	color: #fff;
 }
 .eu9-post-tag > a:hover {
     background: #ffffff80;
