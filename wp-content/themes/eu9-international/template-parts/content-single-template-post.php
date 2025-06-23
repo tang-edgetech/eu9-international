@@ -17,9 +17,7 @@ $diff = $current_time - $post_time;
 <div class="post-outer-box">
     <div class="post-inner-row">
         <div class="post-header">
-            <div class="breadcrumb">
-                <?php echo get_eu9_breadcrumb($post_title);?>
-            </div>
+            <?php echo get_eu9_breadcrumb($post_title);?>
         </div>
         <div class="post-body">
             <div class="post-body-inner d-md-flex">

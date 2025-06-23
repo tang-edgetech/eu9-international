@@ -465,7 +465,7 @@ blockquote {
 	font-size: 19px;
 	line-height: 26px;
 }
-.post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-title, .post-grid.post-listing-grid.post-first-highlight .post-item:first-child div[class^='post-'] > a {
+.post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-title {
 	color: #333;
 }
 .post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-excerpt, .post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-excerpt p {

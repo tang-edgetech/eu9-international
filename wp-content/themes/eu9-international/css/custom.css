@@ -76,7 +76,11 @@
 }
 .single .post-body, .single .post-body .post-category a, .single .post-body .post-title {
     color: var(--primary-white);
-}.share-button::before {
+}
+.single .wp-editor p:not(:last-child) {
+    margin-bottom: 24px;
+}
+.share-button::before {
     content: '';
     display: block;
     position: absolute;
@@ -84,7 +88,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-facebook.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-facebook.png);
     background-size: 35px 35px;
     background-repeat: no-repeat;
     background-position: center center;
@@ -95,62 +99,62 @@
     filter: invert(0);
 }
 .share-button[data-network="facebook"]::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-facebook.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-facebook.png);
 }
 .share-button[data-network="facebook"]:hover::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-facebook-hover.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-facebook-hover.png);
 }
 .share-button[data-network="instagram"]::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-instagram.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-instagram.png);
 }
 .share-button[data-network="instagram"]:hover::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-instagram-hover.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-instagram-hover.png);
 }
 .share-button[data-network="messenger"]::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-messenger.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-messenger.png);
 }
 .share-button[data-network="messenger"]:hover::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-messenger-hover.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-messenger-hover.png);
 }
 .share-button[data-network="twitter"]::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-twitter-new.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-twitter-new.png);
 }
 .share-button[data-network="twitter"]:hover::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-twitter-new-hover.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-twitter-new-hover.png);
 }
 .share-button[data-network="linkedin"]::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-linkedin.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-linkedin.png);
 }
 .share-button[data-network="linkedin"]:hover::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-linkedin-hover.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-linkedin-hover.png);
 }
 .share-button[data-network="whatsapp"]::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-whatsapp.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-whatsapp.png);
 }
 .share-button[data-network="whatsapp"]:hover::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-whatsapp-hover.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-whatsapp-hover.png);
 }
 .share-button[data-network="pinterest"]::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-pinterest.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-pinterest.png);
 }
 .share-button[data-network="pinterest"]:hover::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-pinterest-hover.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-pinterest-hover.png);
 }
 .share-button[data-network="telegram"]::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-telegram.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-telegram.png);
 }
 .share-button[data-network="telegram"]:hover::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-telegram-hover.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-telegram-hover.png);
 }
 .share-button[data-network="line"]::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-line.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-line.png);
 }
 .share-button[data-network="line"]:hover::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-line-hover.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-line-hover.png);
 }
 .share-button[data-network="wechat"]::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-wechat.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-wechat.png);
 }
 .share-button[data-network="wechat"]:hover::before {
-    background-image: url(http://127.0.0.1/eu9-international/wp-content/uploads/2025/06/icon-wechat-hover.png);
+    background-image: url(https://eu9.international/wp-content/uploads/2025/06/icon-wechat-hover.png);
 }

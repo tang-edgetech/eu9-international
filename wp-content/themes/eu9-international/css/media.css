@@ -46,6 +46,9 @@
 	.post-grid.post-listing-grid .post-item .post-excerpt {
     	-webkit-line-clamp: 4;
 	}
+	.post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-category > a, .post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-title, .post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-excerpt {
+	    color: var(--primary-white);
+	}
 	.post-grid.post-listing-grid.post-first-highlight .post-item:first-child .post-excerpt {
     	-webkit-line-clamp: 5;
 	}
